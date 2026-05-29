@@ -1,0 +1,29 @@
+\babel@toc {spanish}{}\relax 
+\ttl@starttoc {sections@1}
+\contentsline {section}{\numberline {1}P4\_1: Filtro compensador del CIC}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Descripción del módulo \emph {comp\_cic}}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Análisis de la cuantificación de la ruta de datos}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Interfaz}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Diseño de la Máquina de Estados}{5}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Recursos hardware}{6}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Frecuencia de operación}{8}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Verificación RTL}{8}{subsection.1.7}%
+\contentsline {subsubsection}{\numberline {1.7.1}Caso 1: }{9}{subsubsection.1.7.1}%
+\contentsline {subsubsection}{\numberline {1.7.2}Caso 2:}{9}{subsubsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.8}Verificación a nivel de puertas}{9}{subsection.1.8}%
+\contentsline {section}{\numberline {2}Conclusiones}{9}{section.2}%
+\contentsline {section}{\numberline {3}P4\_2: Filtro compensador del DAC}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Diseño de la estructura del filtro compensador del DAC}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Análisis de la cuantificación de la ruta de datos}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Interfaz}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Recursos hardware}{10}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Frecuencia de operación}{12}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Verificación RTL}{13}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Caso 1: }{13}{subsubsection.3.6.1}%
+\contentsline {section}{\numberline {4}Conclusiones}{13}{section.4}%
+\contentsline {section}{\numberline {5}Ficheros entregados}{13}{section.5}%
+\contentsline {section}{\numberline {6}ANEXO 1: Código HDL de los módulos implementados en P4\_1}{14}{section.6}%
+\contentsline {section}{\numberline {7}ANEXO 2: Código HDL del banco de pruebas comp\_cic\_tsb}{15}{section.7}%
+\contentsline {section}{\numberline {8}ANEXO 3: Código HDL de los módulos implementados en P4\_2}{15}{section.8}%
+\contentsline {section}{\numberline {9}ANEXO 4: Código HDL del banco de pruebas comp\_dac\_tsb}{15}{section.9}%
+\contentsfinish 

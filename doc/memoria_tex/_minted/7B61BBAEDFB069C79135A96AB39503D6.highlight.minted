@@ -1,0 +1,19 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{module}\PYG{+w}{ }\PYG{n}{comp\PYGZus{}dac}
+\PYG{p}{\PYGZsh{}(}\PYG{k}{parameter}\PYG{+w}{ }\PYG{n}{Win}\PYG{o}{=}\PYG{l+m+mh}{16}\PYG{p}{,}\PYG{+w}{  }\PYG{c+c1}{// Module input wordlength}
+\PYG{k}{parameter}\PYG{+w}{ }\PYG{n}{Wout}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{14}\PYG{p}{)}\PYG{c+c1}{// Module output wordlength}
+
+\PYG{p}{(}\PYG{k}{input}\PYG{+w}{ }\PYG{k}{signed}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{Win}\PYG{o}{\PYGZhy{}}\PYG{l+m+mh}{1}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{id\PYGZus{}data}\PYG{p}{,}\PYG{+w}{ }\PYG{c+c1}{// S[Win, Win\PYGZhy{}1]}
+\PYG{k}{input}\PYG{+w}{ }\PYG{n}{ic\PYGZus{}val\PYGZus{}data}\PYG{p}{,}
+\PYG{k}{input}\PYG{+w}{ }\PYG{n}{clk}\PYG{p}{,}
+\PYG{k}{output}\PYG{+w}{ }\PYG{k}{signed}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{Wout}\PYG{o}{\PYGZhy{}}\PYG{l+m+mh}{1}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{+w}{ }\PYG{p}{]}\PYG{+w}{ }\PYG{n}{od\PYGZus{}data}\PYG{p}{,}\PYG{c+c1}{// S[Wout, Wout\PYGZhy{}1]}
+\PYG{k}{output}\PYG{+w}{ }\PYG{n}{oc\PYGZus{}val\PYGZus{}data}\PYG{p}{);}
+\PYG{+w}{	}
+\PYG{c+cm}{/* DECLARACIONES \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} */}
+
+\PYG{c+cm}{/* DESCRIPCION \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} */}\PYG{+w}{	}
+
+\PYG{c+cm}{/* ASIGNACION SALIDAS \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} */}
+
+\PYG{k}{endmodule}
+\end{MintedVerbatim}

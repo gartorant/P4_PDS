@@ -1,0 +1,22 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{module}\PYG{+w}{ }\PYG{n}{comp\PYGZus{}cic}
+\PYG{p}{\PYGZsh{}(}\PYG{+w}{  }\PYG{k}{parameter}\PYG{+w}{ }\PYG{n}{Win}\PYG{o}{=}\PYG{l+m+mh}{16}\PYG{p}{,}\PYG{+w}{    }\PYG{c+c1}{// Input Wordlength}
+\PYG{+w}{    }\PYG{k}{parameter}\PYG{+w}{ }\PYG{n}{Wcoef}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{XX}\PYG{p}{,}\PYG{+w}{   }\PYG{c+c1}{// Coefficients Wordlength}
+\PYG{+w}{    }\PYG{k}{parameter}\PYG{+w}{ }\PYG{n}{Wout}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{18}\PYG{p}{,}\PYG{+w}{  }\PYG{c+c1}{// Output wordlength}
+\PYG{+w}{    }\PYG{k}{parameter}\PYG{+w}{ }\PYG{n}{Ng}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{XX}\PYG{p}{,}\PYG{+w}{    }\PYG{c+c1}{// Filter growth}
+\PYG{+w}{    }\PYG{k}{parameter}\PYG{+w}{ }\PYG{n}{Num\PYGZus{}coef}\PYG{o}{=}\PYG{l+m+mh}{17}\PYG{p}{)}\PYG{+w}{   }\PYG{c+c1}{// Coefficients number}
+\PYG{p}{(}
+\PYG{+w}{ }\PYG{k}{input}\PYG{+w}{  }\PYG{k}{signed}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{Win}\PYG{o}{\PYGZhy{}}\PYG{l+m+mh}{1}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{id\PYGZus{}data\PYGZus{}filter}\PYG{p}{,}\PYG{+w}{ }\PYG{c+c1}{// Input S[16 15]}
+\PYG{+w}{ }\PYG{k}{input}\PYG{+w}{  }\PYG{n}{clk}\PYG{p}{,}
+\PYG{+w}{ }\PYG{k}{input}\PYG{+w}{ }\PYG{n}{ic\PYGZus{}val\PYGZus{}data}\PYG{p}{,}
+\PYG{+w}{ }\PYG{k}{input}\PYG{+w}{ }\PYG{n}{ic\PYGZus{}rst}\PYG{p}{,}
+\PYG{+w}{ }\PYG{k}{output}\PYG{+w}{ }\PYG{k}{signed}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{Wout}\PYG{o}{\PYGZhy{}}\PYG{l+m+mh}{1}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{od\PYGZus{}data\PYGZus{}filter}\PYG{p}{,}\PYG{+w}{ }\PYG{c+c1}{// S[18 15]}
+\PYG{+w}{ }\PYG{k}{output}\PYG{+w}{ }\PYG{n}{oc\PYGZus{}val\PYGZus{}data}\PYG{p}{);}
+\PYG{c+cm}{/* DECLARACIONES \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} */}
+
+\PYG{c+cm}{/* DESCRIPCION \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} */}\PYG{+w}{	}
+
+\PYG{c+cm}{/* ASIGNACION SALIDAS \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} */}
+
+\PYG{k}{endmodule}
+\end{MintedVerbatim}
