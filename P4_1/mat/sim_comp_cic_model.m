@@ -19,7 +19,7 @@ full_precision = 0 % :1 Full precision
 file_test_gen = 1; %1-> yes; 0->no
 
 % Open figures
-open_figs = 1; %1-> yes; 0->no
+open_figs = 0; %1-> yes; 0->no
 
 % Directory to place the test files and the package for tsb.
 file_dir = '../sim/iof/';
@@ -28,7 +28,7 @@ tsb_dir = '../tsb/';
 
 
 %% TEST CASES:
-test_case = 3
+test_case = 2
 
 % List of test cases
 % 1 : Square signal fo=5 kHz
@@ -100,10 +100,10 @@ h_comp_cic = round(h_comp_cic*2^16)*2^-16; %% Coeficientes comp cic cuantificado
 %% Realice los cálculos necesarios para hallar Ng a partir de la ganancia del filtro
 Win = 16; %% Cuantificación entrada del filtro
 Fin = 15;  %% Parte fraccional entrada del filtro 
-% Wcoef = XX; %% COMPLETAR Cuantificación de los coeficientes
-% Fcoef = XX; %% COMPLETAR Parte fraccional de los coeficientes
+Wcoef = 18; %% COMPLETAR Cuantificación de los coeficientes
+Fcoef = 16; %% COMPLETAR Parte fraccional de los coeficientes
 
-% Ng = XXX; % COMPLETAR Crecimiento del filtro
+Ng = 18; % COMPLETAR Crecimiento del filtro
 
 if full_precision == 1
     Wout = Win + Ng;
@@ -133,17 +133,79 @@ if open_figs == 1
         xlabel('n')
         title('Señal de salida del compensador resp. CIC');
 end
+%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Generacion de ficheros de datos para testear todos los módulos:
-%% - Entrada del compensador CIC
-%% - Salida del compensador CIC
-%% - Fichero de coeficientes del compensador CIC
-%% - Fichero package con los parámetros: Win, Wcoef, Wout, Ng, Num_coef, full_precision, 
-
+%%% Generacion de ficheros de datos para testear todos los módulos:       %
+%%% - Entrada del compensador CIC                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COMPLETAR POR EL ALUMNO
 if file_test_gen == 1
- 
-    %% COMPLETAR POR EL ALUMNO
- 
+    %id_comp_cic.txt
+    input_q = quantizer([Win Fin], ...
+        'wrap', 'floor');   % Crea un cuantizador con formato [Win Fin], 
+                            % saturación wrap y redondeo floor
+    f = sprintf([file_dir 'id_comp_cic.txt']); % Construye la ruta completa 
+                                               % del fichero de salida
+    input_data_length = length(s_in_q);
+    pack_f  = fopen(f,'w');
+    for i = 1:input_data_length-1
+        fprintf(pack_f,[num2bin(input_q, s_in_q(i)) '\n']); % Escribe la muestra 
+                                                            % cuantizada en binario
+    end
+    fprintf(pack_f,[num2bin(input_q, s_in_q(i+1))]);
+    fclose(pack_f);
+end
+%% - Salida del compensador CIC
+%% COMPLETAR POR EL ALUMNO
+if file_test_gen == 1
+    %od_comp_cic.txt
+    output_q = quantizer([Wout Fout], 'wrap', 'floor');
+    f = sprintf([file_dir 'od_comp_cic.txt']);
+    output_data_length = length(s_out_q);
+    pack_f  = fopen(f,'w');
+    for i = 1:output_data_length-1
+        fprintf(pack_f,[num2bin(output_q, s_out_q(i)) '\n']);
+    end
+    fprintf(pack_f,[num2bin(output_q, s_out_q(i+1))]);
+    fclose(pack_f);
+end
+%% - Fichero de coeficientes del compensador CIC
+%% COMPLETAR POR EL ALUMNO
+if file_test_gen == 1
+    %rom_coefs_comp_cic.txt
+    rom_coefs = quantizer([Wcoef Fcoef], 'wrap', 'floor');
+    f = sprintf([file_dir 'rom_coefs_comp_cic.txt']);
+    rom_coefs_length = length(h_comp_cic);
+    pack_f  = fopen(f,'w');
+    for i = 1:rom_coefs_length-1
+        fprintf(pack_f,[num2bin(rom_coefs, h_comp_cic(i)) '\n']);
+    end
+    fprintf(pack_f,[num2bin(rom_coefs, h_comp_cic(i+1))]);
+    fclose(pack_f);
+end
+%% - Fichero package con los parámetros: Win, Wcoef, Wout, Ng, Num_coef, full_precision, 
+%% COMPLETAR POR EL ALUMNO
+if file_test_gen == 1
+    %comp_cic_tsb_pkg.sv
+    f = sprintf([tsb_dir tsb_name '_pkg.sv']);
+    pack_f = fopen(f, 'w');
+    fprintf(pack_f, 'package %s_pkg; \n',tsb_name);
+    fprintf(pack_f, '\n');
+    fprintf(pack_f, 'integer test_case = %d; \n', test_case);
+    fprintf(pack_f, 'integer input_data_length  = %d; \n', input_data_length);
+    fprintf(pack_f, 'integer output_data_length = %d; \n', output_data_length);
+    fprintf(pack_f, 'integer fo = %d; \n', fo);
+    fprintf(pack_f, ' \n');
+    
+    fprintf(pack_f, 'parameter R = %d; \n', R);
+    fprintf(pack_f, 'parameter Win = %d; \n', Win);
+    fprintf(pack_f, 'parameter Wcoef = %d; \n', Wcoef);
+    fprintf(pack_f, 'parameter Wout  = %d; \n', Wout);
+    fprintf(pack_f, 'parameter Ng    = %d; \n', Ng);
+    fprintf(pack_f, 'parameter rom_coefs = %d; \n', rom_coefs_length);
+    fprintf(pack_f, 'parameter full_precision = %d; \n', full_precision);
+    fprintf(pack_f, '\n');
 
+    fprintf(pack_f, 'endpackage');
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
